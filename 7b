@@ -1,0 +1,37 @@
+
+#include <stdio.h>
+
+int main() {
+    int n, i, ws;
+
+    printf("Enter number of frames: ");
+    scanf("%d", &n);
+
+    printf("Enter window size: ");
+    scanf("%d", &ws);
+
+    for(i = 1; i <= n; i += ws) {
+        printf("\nSending frames: ");
+        for(int j = i; j < i + ws && j <= n; j++)
+            printf("%d ", j);
+
+        printf("\nAcknowledgement received\n");
+    }
+
+    printf("\nAll frames sent successfully.");
+    return 0;
+}
+#output
+Enter number of frames: 5
+Enter window size: 2
+
+Sending frames: 1 2
+Acknowledgement received
+
+Sending frames: 3 4
+Acknowledgement received
+
+Sending frames: 5
+Acknowledgement received
+
+All frames sent successfully.
